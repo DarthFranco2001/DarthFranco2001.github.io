@@ -350,86 +350,158 @@ The 'fa-brands' class selects the icon category, and 'fa-[platform]' loads a spe
 </section>
 
 <section id="robot" class="robot-project">
-  <h2 class="section-title">Un poco de contexto</h2>
+  <h2 class="section-title">Robot Project: <span>Line Follower</span></h2>
   <div class="robot-columns-1">
     <div class="robot-box">
       <p>
-        Durante este semestre soy asistente de un trabajo comunitario llamado tropicalización de la tecnología en mi universidad
-        y tengo que liderar varias actividades con fines de acción social, entre ellas construir un robot seguidor de línea con el fin
-        de llevarlos a escuelas y motivar a niños a optar por carreras STEM.
+        During this semester, I’ve been working as an assistant in a community outreach program at my university called "Tropicalización de la Tecnología". As part of this initiative, I lead several activities with a social impact focus—one of them being the design and construction of a line follower robot to take to schools and inspire children to explore STEM careers.
       </p>
       <p>
-        Un robot seguidor de línea es un robot que sigue un camino o línea trazada en el suelo, como un recorrido en blanco y negro.
+        A line follower robot is a type of autonomous machine that follows a predefined path on the ground—typically a black line on a white surface or vice versa. It uses sensors to detect contrast and make decisions in real time to stay on course.
       </p>
       <img src="images/LineFollower.png" alt="Robot seguidor de línea">
       <p class="caption">
-        Robot diseñado para actividades de acción social en escuelas, promoviendo el interés por carreras STEM.
+        Robot designed for community outreach activities in schools, promoting interest in STEM careers.
+      </p>
+      <p class>
+        A line follower consists of five key components, which we will explore below.
       </p>
     </div>
   </div>
 </section>
 
 <section id="robot-tech" class="robot-project">
-  <h2 class="section-title">Tecnicismos detrás del robot</h2>
+  <h2 class="section-title">Inside the Line Follower: <span>Core Components</span></h2>
+
   <div class="robot-columns-2">
+
+    <!-- 1. Development Board -->
     <div class="robot-box">
-      <h3><span>1. Placa de desarrollo</span></h3>
+      <h3><span>1. Development Board</span></h3>
       <p>
-        Este componente es el cerebro del proyecto, ya que consiste en un sistema programable que actúa como un intermediario
-        entre el código y las órdenes controladas dadas por la placa de desarrollo. Para este proyecto en particular se utiliza un <strong>Arduino Nano</strong>.
+        This component is the brain of the project. It’s a programmable system that interprets the code and sends instructions to control the rest of the robot. For this project, we used an <strong>Arduino Nano</strong> as the development board.
       </p>
       <img src="images/ArduinoNano.jpg" alt="Arduino Nano">
-      
-      <h3><span>2. Sensor seguidor de línea</span></h3>
-      <p>
-        Un sensor de línea es el dispositivo que ayuda al robot a detectar la línea trazada en el suelo.
-        El sensor funciona emitiendo luz infrarroja al suelo y detectando su rebote (reflexión).
-        Si la superficie es blanca (o clara), la luz se refleja más. Si es negra (u oscura), la luz se absorbe y refleja menos.
+      <p class="caption">
+        Arduino Nano used as the programmable brain of the robot.
       </p>
-      <img src="images/LineFollowerSensor.png" alt="Sensor seguidor de línea">
     </div>
 
+    <!-- 2. Line Follower Sensor -->
     <div class="robot-box">
-      <h3><span>3. Motores paso a paso</span></h3>
+      <h3><span>2. Line Follower Sensor</span></h3>
       <p>
-        Un motor paso a paso es un tipo de motor que no gira como loco, sino que lo hace dando pequeños pasitos.
-        Cada vez que le mandás una orden, gira un pedacito (por ejemplo, 1.8°). Si le das muchas órdenes, va girando paso por paso.
-        Es ideal para este proyecto porque sus movimientos suaves pueden ser controlados con Arduino, lo que los hace ideales para utilizarlos como sus llantas.
+        A line sensor is the component that helps the robot detect the path drawn on the ground—it's like the robot’s eyes. The sensor works by emitting infrared light toward the surface and detecting how much of it is reflected back. If the surface is white (or light-colored), more light is reflected. If it’s black (or dark), the light is absorbed and much less is reflected.
+      </p>
+      <img src="images/LineFollowerSensor.png" alt="Line Follower Sensor">
+      <p class="caption">
+        Infrared sensor that allows the robot to detect and follow the line.
+      </p>
+    </div>
+
+    <!-- 3. Stepper Motors -->
+    <div class="robot-box">
+      <h3><span>3. Stepper Motors</span></h3>
+      <p>
+        Stepper motors are responsible for the movement of the robot. Unlike regular motors that spin freely, these rotate in precise steps, which allows us to control the position and direction with great accuracy. In this project, each stepper motor is used to drive one of the wheels, making the robot capable of following the line with smooth and controlled movements.
       </p>
       <img src="images/steps.png" alt="Motor paso a paso">
       <p class="caption">
-        En la figura se muestra un motor a pasos que gira realizando pasos de 90°. Esto pasa porque este motor tiene cuatro bobinas las cuales se encienden
-        consecutivamente. Es decir, en la imagen 1, se enciende la bobina A. En la imagen 2 se enciende la bobina B. En la imagen 3 se enciende la bobina A'
-        y en la imagen 4 se enciende la bobina B'.
-      </p>
-
-      <h3><span>4. Amplificadores de corriente (drivers)</span></h3>
-      <p>
-        Los motores funcionan con una alta corriente eléctrica, corriente que el Arduino Nano (el cerebro del carrito) no es capaz de entregar.
-        Por esta razón, se necesitan unos dispositivos que amplifiquen esta corriente.
-      </p>
-      <img src="images/CurrentAmplifiers.jpg" alt="Drivers">
-      <p class="caption">
-        Así lucen unos amplificadores de corriente en la vida real.
+        The figure illustrates how a stepper motor rotates in 90° steps by sequentially energizing four coils—A, B, A′, and B′—one at a time.
       </p>
     </div>
-  </div>
 
-  <div class="robot-columns-1">
+    <!-- 4. Current Amplifiers -->
     <div class="robot-box">
-      <img src="images/connectionDiagram.png" alt="Connection diagram">
-      <p class="caption">
-        Connection diagram
-      </p>
+      <h3><span>4. Current Amplifiers (Drivers)</span></h3>
       <p>
-        El carro funciona de la siguiente manera: el sensor de línea mide dónde hay negro y dónde hay blanco y envía estas mediciones
-        a la placa de desarrollo (el cerebro). Aquí, el cerebro procesa esta información y le ordena a las llantas (los motores paso a paso)
-        cómo deben girar para seguir la línea.
+        Stepper motors require more current than the Arduino Nano can provide. That’s why we use current amplifiers, also known as drivers. These components take the low-power signals from the development board and amplify them to provide enough power for the motors to operate safely and effectively.
+      </p>
+      <img src="images/CurrentAmplifiers.jpeg" alt="Drivers">
+      <p class="caption">
+        Real-life example of current drivers used to power the robot's stepper motors.
       </p>
     </div>
+
   </div>
 </section>
 
+<h2 class="section-title">How the Robot Works</h2>
+<section id="robot" class="robot-project">
+<div class="robot-columns-1">
+  <div class="robot-box">
+    <p>
+      The robot works as follows: the line sensor detects where the black and white surfaces are and sends that information to the development board—its brain. The brain then processes this data and tells the wheels (stepper motors) how they should turn to follow the line.
+    </p>
+    <img src="images/connectionDiagram.png" alt="Connection diagram">
+    <p class="caption">
+      Diagram showing how all components are connected and interact.
+    </p>
+    <p>
+      You can think of it like a human body: the sensor acts as the eyes, detecting where the line is. This visual information is sent to the brain (the Arduino), which decides how to respond. Finally, the brain gives instructions to the feet (the wheels), telling them where and how to move.
+    </p>
+  </div>
+</div>
+</section>
+
+<h2 class="section-title">Project Progress</h2>
+
+<div class="robot-columns-1">
+  <div class="robot-box">
+    <p>
+      To achieve the final goal of building a working line follower robot, I divided the project into three key task blocks. Each block represents a phase of the development process, from understanding components to coding and integration. We are currently working on the <strong>second block</strong>.
+    </p>
+
+    <div class="robot-components">
+      <!-- Task Block 1 -->
+      <div class="component-box">
+        <h3><span>1. Initial Testing</span></h3>
+        <p>
+          • Test stepper motors<br>
+          • Understand connections between current drivers and motors<br>
+          • Understand connections between the development board and drivers<br>
+          • Understand sensor-to-board wiring<br>
+          • Propose a prototype layout
+        </p>
+      </div>
+
+      <!-- Task Block 2 -->
+      <div class="component-box">
+        <h3><span>2. Coding and Structure</span></h3>
+        <p>
+          • Implement code to control stepper motors<br>
+          • Implement code to read reflected light from the line sensor<br>
+          • Print a 3D model to support all components
+        </p>
+      </div>
+
+      <!-- Task Block 3 -->
+      <div class="component-box">
+        <h3><span>3. Integration and Control</span></h3>
+        <p>
+          • Mount all components in one chassis<br>
+          • Implement a control system to steer the robot based on sensor readings<br>
+          • Design test paths for the robot to follow
+        </p>
+      </div>
+    </div>
+
+    <!-- Prototype Photos -->
+    <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+      <img src="images/RealLineFollower1.png" alt="Line follower prototype 1" style="width: 45%; border-radius: 1rem;">
+      <img src="images/RealLineFollower2.png" alt="Line follower prototype 2" style="width: 45%; border-radius: 1rem;">
+    </div>
+
+    <p class="caption">
+      Photos of the current prototype under development.
+    </p>
+
+    <!-- Link to full manual -->
+    <a href="docs/LineFollower.pdf" target="_blank" class="btn warning-btn" style="margin-top: 2rem;">
+      📄 View Full Construction Manual
+    </a>
+  </div>
+</div>
 
 
 <script>
