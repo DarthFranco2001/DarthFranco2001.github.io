@@ -18,5 +18,9 @@ No setup required — the site is fully hosted with GitHub Pages.
 - JavaScript (for interactive features)
 - Hosted on GitHub Pages
 
-## 📁 Structure
+## 📂 Included Projects
 
+This portfolio currently features two projects I've worked on:
+
+1. **Biomedical Research Project** – An advanced and technically challenging project focused on cancer cell detection using gold nanoparticles and photoacoustic imaging.
+2. **Line Follower Robot** – A simpler, hands-on project that I've led as part of a university outreach program, aimed at promoting STEM education in schools.
