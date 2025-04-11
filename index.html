@@ -56,7 +56,7 @@ Here, it wraps the profile image and applies the 'home-img' class for styling.--
 'src' defines the path to the image file (source).
 'alt' provides alternative text for accessibility and in case the image doesn't load (alternative).-->
 
-  <img src="images/MyPhoto.jpeg" alt="Mi foto personal">
+<img id="profile-photo" src="images/MyPhoto2.jpeg" alt="Mi foto personal">
 </div>
 
 <div class="home-content" alt="">
@@ -502,6 +502,19 @@ The 'fa-brands' class selects the icon category, and 'fa-[platform]' loads a spe
     </a>
   </div>
 </div>
+
+<script>
+  const photo = document.getElementById("profile-photo");
+
+  // Rutas de las dos imágenes
+  const originalPhoto = "images/MyPhoto.jpeg";
+  const alternatePhoto = "images/MyPhoto2.jpeg"; // <- Cambiala según tu archivo
+
+  photo.addEventListener("click", () => {
+    // Cambia entre la original y la alterna
+    photo.src = (photo.src.includes(originalPhoto)) ? alternatePhoto : originalPhoto;
+  });
+</script>
 
 
 <script>
