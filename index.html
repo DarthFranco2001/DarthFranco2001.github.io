@@ -333,6 +333,86 @@ The 'fa-brands' class selects the icon category, and 'fa-[platform]' loads a spe
   </div>
 </section>
 
+<section id="robot" class="robot-project">
+  <h2 class="section-title">Un poco de contexto</h2>
+  <div class="robot-columns-1">
+    <div class="robot-box">
+      <p>
+        Durante este semestre soy asistente de un trabajo comunitario llamado tropicalización de la tecnología en mi universidad
+        y tengo que liderar varias actividades con fines de acción social, entre ellas construir un robot seguidor de línea con el fin
+        de llevarlos a escuelas y motivar a niños a optar por carreras STEM.
+      </p>
+      <p>
+        Un robot seguidor de línea es un robot que sigue un camino o línea trazada en el suelo, como un recorrido en blanco y negro.
+      </p>
+      <img src="images/LineFollower.png" alt="Robot seguidor de línea">
+      <p class="caption">
+        Robot diseñado para actividades de acción social en escuelas, promoviendo el interés por carreras STEM.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="robot-tech" class="robot-project">
+  <h2 class="section-title">Tecnicismos detrás del robot</h2>
+  <div class="robot-columns-2">
+    <div class="robot-box">
+      <h3><span>1. Placa de desarrollo</span></h3>
+      <p>
+        Este componente es el cerebro del proyecto, ya que consiste en un sistema programable que actúa como un intermediario
+        entre el código y las órdenes controladas dadas por la placa de desarrollo. Para este proyecto en particular se utiliza un <strong>Arduino Nano</strong>.
+      </p>
+      <img src="images/ArduinoNano.jpg" alt="Arduino Nano">
+      
+      <h3><span>2. Sensor seguidor de línea</span></h3>
+      <p>
+        Un sensor de línea es el dispositivo que ayuda al robot a detectar la línea trazada en el suelo.
+        El sensor funciona emitiendo luz infrarroja al suelo y detectando su rebote (reflexión).
+        Si la superficie es blanca (o clara), la luz se refleja más. Si es negra (u oscura), la luz se absorbe y refleja menos.
+      </p>
+      <img src="images/LineFollowerSensor.png" alt="Sensor seguidor de línea">
+    </div>
+
+    <div class="robot-box">
+      <h3><span>3. Motores paso a paso</span></h3>
+      <p>
+        Un motor paso a paso es un tipo de motor que no gira como loco, sino que lo hace dando pequeños pasitos.
+        Cada vez que le mandás una orden, gira un pedacito (por ejemplo, 1.8°). Si le das muchas órdenes, va girando paso por paso.
+        Es ideal para este proyecto porque sus movimientos suaves pueden ser controlados con Arduino, lo que los hace ideales para utilizarlos como sus llantas.
+      </p>
+      <img src="images/steps.png" alt="Motor paso a paso">
+      <p class="caption">
+        En la figura se muestra un motor a pasos que gira realizando pasos de 90°. Esto pasa porque este motor tiene cuatro bobinas las cuales se encienden
+        consecutivamente. Es decir, en la imagen 1, se enciende la bobina A. En la imagen 2 se enciende la bobina B. En la imagen 3 se enciende la bobina A'
+        y en la imagen 4 se enciende la bobina B'.
+      </p>
+
+      <h3><span>4. Amplificadores de corriente (drivers)</span></h3>
+      <p>
+        Los motores funcionan con una alta corriente eléctrica, corriente que el Arduino Nano (el cerebro del carrito) no es capaz de entregar.
+        Por esta razón, se necesitan unos dispositivos que amplifiquen esta corriente.
+      </p>
+      <img src="images/CurrentAmplifiers.jpg" alt="Drivers">
+      <p class="caption">
+        Así lucen unos amplificadores de corriente en la vida real.
+      </p>
+    </div>
+  </div>
+
+  <div class="robot-columns-1">
+    <div class="robot-box">
+      <img src="images/connectionDiagram.png" alt="Connection diagram">
+      <p class="caption">
+        Connection diagram
+      </p>
+      <p>
+        El carro funciona de la siguiente manera: el sensor de línea mide dónde hay negro y dónde hay blanco y envía estas mediciones
+        a la placa de desarrollo (el cerebro). Aquí, el cerebro procesa esta información y le ordena a las llantas (los motores paso a paso)
+        cómo deben girar para seguir la línea.
+      </p>
+    </div>
+  </div>
+</section>
 
 
 

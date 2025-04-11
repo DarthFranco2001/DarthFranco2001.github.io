@@ -558,3 +558,67 @@ nav a.active {
 }
 
 
+
+/* Robot */
+
+.robot-project {
+  padding: 5rem 9%;
+  background-color: white;
+}
+
+.robot-columns-1 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.robot-box {
+  width: 100%;
+  max-width: 800px;
+  background-color: white;
+  border: 2px solid #01A982;
+  padding: 2rem;
+  border-radius: 2rem;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  color: #333;
+  box-shadow: 0 0 10px rgba(1, 169, 130, 0.1);
+  transition: 0.3s ease;
+}
+
+.robot-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px #01A982;
+  cursor: pointer;
+}
+
+.robot-box img {
+  width: 100%;
+  border: 3px solid #01A982;
+  border-radius: 1rem;
+  margin-top: 1.5rem;
+}
+
+.caption {
+  font-size: 1.4rem;
+  color: #555;
+  margin-top: 0.8rem;
+  text-align: center;
+}
+
+.robot-columns-2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.robot-columns-2 .robot-box {
+  flex: 1 1 45%;
+}
+
+.robot-box h3 span {
+  color: #01A982; /* Color turquesa para títulos */
+  font-size: 2rem;
+  font-weight: 700;
+}
