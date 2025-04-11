@@ -481,6 +481,17 @@ nav a.active {
   transition: transform 0.3s ease;
 }
 
+.tech-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px #01A982;
+  cursor: pointer;
+}
+
+.tech-box img:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
 .tech-logo {
   width: 80px;                    /* Más grande que antes */
   height: auto;
