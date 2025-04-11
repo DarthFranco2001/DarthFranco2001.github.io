@@ -1,0 +1,352 @@
+<!DOCTYPE html> <!-- This line defines HTML5, the latest version -->
+<html lang="en"> <!-- Sets the language of the document to English -->
+<head> <!-- Hidden section of the document, where important metadata is defined -->
+    <meta charset="UTF-8"> <!-- Character encoding: allows special characters like ñ, á, etc. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the page responsive on mobile devices -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!-- Loads Font Awesome 6.5.2 icons (e.g., LinkedIn, GitHub) from the Content Delivery Network (CDN) -->
+    <title>Franco's Presentation</title> <!-- Title shown in the browser tab -->
+    <link rel="stylesheet" href="style.css"> <!-- Connects this file to the external CSS stylesheet -->
+</head>
+
+<body><!-- The body displays all the visual elements of the webpage that users interact with -->
+<header><!-- The header contains the website logo and main navigation menu -->
+
+<!--<a> is an anchor tag used to create a hyperlink. 
+It defines clickable text that can lead to another page, section, or resource. -->
+
+<!-- href="#" means the link currently doesn’t go anywhere specific. 
+The '#' is often used as a placeholder or to link to a section on the same page. -->
+
+<!--  class="element" assigns a class name to this element.
+This allows CSS to apply custom styles to this specific element, such as font size, color, or hover effects.-->
+
+  <a href="#" class="logo">Franco's website</a>
+
+<!-- Navigation menu with links to different sections of the website -->
+  <nav>
+<!-- 'href' can point to specific pages or section IDs -->
+<!-- 'class="active"' marks the currently active page -->
+    <a href="#">Home</a>
+    <a href="#about">About me</a>
+    <a href="#skills">Skills</a>
+    <div class="dropdown">
+      <a href="#">Projects</a>
+      <div class="dropdown-content">
+        <a href="#biomedical">Biomedical</a>
+        <a href="#robot">Robot</a>
+        <a href="#automation">Automation</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- <section> is a semantic HTML5 tag used to group related content into a distinct block. 
+  It helps structure the page clearly and improves accessibility and SEO. -->
+
+<!-- class="home" assigns a specific CSS style to this section. 
+It is used to define the layout, background color, spacing, and alignment of the homepage content. -->
+
+<section class="home">
+
+<!-- <div> is a generic container used to group elements and apply styles to them as a unit.
+Here, it wraps the profile image and applies the 'home-img' class for styling.-->
+
+<div class="home-img">
+
+<!-- <img> displays an image on the page. 
+'src' defines the path to the image file (source).
+'alt' provides alternative text for accessibility and in case the image doesn't load (alternative).-->
+
+  <img src="images/MyPhoto.jpeg" alt="Mi foto personal">
+</div>
+
+<div class="home-content" alt="">
+
+<!-- <h1> is the main heading of the page. It introduces the user.
+<span> is used to style part of the text separately — in this case, the name 'Franco'.-->
+
+  <h1>Hi I'm <span>Franco!</span></h1>
+
+<!-- <h3> is a subheading. The 'typing-text' class is used to create a typing animation effect.-->
+  <h3 class="typing-text"> And I'm an Electrial Engineeer Student</h3>
+
+<!-- <p> defines a paragraph of text. It is used here to describe your professional profile and interests.-->
+
+  <p> I am passionate about working on technological projects that integrate engineering, biomedical science, and
+    programming to create impactful solutions. I am always eager to learn and improve my skills, adapting to new
+    challenges with creativity and resilience. Currently, I am seeking an opportunity to enter the job market where I
+    can contribute my knowledge and experience while continuing to grow professionally</p>
+
+    <div class="social-icons">
+
+<!-- Each <i> tag loads a brand icon from Font Awesome. 
+The 'fa-brands' class selects the icon category, and 'fa-[platform]' loads a specific logo.-->
+
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+    </div>
+    <a href="#" class="btn">Download my CV</a>
+    </div>
+</div>
+</section>
+
+<section id="about" class="about">
+
+  <h2 class="section-title">A little bit about <span> my life</span></h2>
+
+  <!-- Escuela de Ingeniería Eléctrica -->
+  <div class="about-row image-left">
+    <img src="images/ElectricalEngineeringSchool.jpeg" alt="Escuela de Ingeniería Eléctrica">
+    <div class="about-content">
+      <h2>This is the School of <span>Electrical Engineering!</span></h2>
+      <p>I'm an active student in the school of electrical engineering</p>
+    </div>
+  </div>
+
+  <!-- LACOMET -->
+  <div class="about-row image-right">
+    <img src="images/Lacomet.jpg" alt="Laboratorio LACOMET">
+    <div class="about-content">
+      <h2>This is the School of <span>Electrical Engineering!</span></h2>
+      <p>He participado en laboratorios desde el 2022, ya que siempre me ha gustado participar en proyectos y actividades fuera de los cursos universitarios.</p>
+    </div>
+  </div>
+
+  <!-- Universidad Rice -->
+  <div class="about-row image-left">
+    <img src="images/Rice.jpeg" alt="Universidad Rice">
+    <div class="about-content">
+      <h2>This is the School of <span>Electrical Engineering!</span></h2>
+      <p>I'm an active student in the school of electrical engineering</p>
+    </div>
+  </div>
+
+  <!-- Guitarra -->
+  <div class="about-row image-right">
+    <img src="images/guitar.jpeg" alt="Yo tocando guitarra">
+    <div class="about-content">
+      <h2>This is the School of <span>Electrical Engineering!</span></h2>
+      <p>I'm an active student in the school of electrical engineering</p>
+    </div>
+  </div>
+
+  <!-- Acción social -->
+  <div class="about-row image-left">
+    <img src="images/accionSocial.jpg" alt="Acción social">
+    <div class="about-content">
+      <h2>This is the School of <span>Electrical Engineering!</span></h2>
+      <p>I'm an active student in the school of electrical engineering</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="skills">
+  <h2 class="section-title">Why should you <span>hire me</span>?</h2>
+
+  
+  <div class="skills-row">
+    <div class="skill-box">
+      <i class="fas fa-paint-brush"></i>
+      <h3>Creativity</h3>
+      <p>I enjoy blending art and technology to create unique, meaningful solutions.</p>
+    </div>
+
+    <div class="skill-box">
+      <i class="fas fa-brain"></i>
+      <h3>Problem Solving</h3>
+      <p>I’m passionate about finding elegant solutions to complex challenges.</p>
+    </div>
+
+    <div class="skill-box">
+      <i class="fas fa-robot"></i>
+      <h3>Technical Skills</h3>
+      <p>I have hands-on experience with engineering tools and programming languages.</p>
+    </div>
+
+    <div class="skill-box">
+      <i class="fas fa-file-alt"></i>
+      <h3>Documentation</h3>
+      <p>I can structure and write professional technical documentation.</p>
+    </div>
+  </div>
+
+  <p class="ieee-description">
+    I have extensive experience writing technical and formal documents in the IEEE style.
+    I am skilled in structuring research papers, producing clear scientific explanations,
+    and generating professional-quality figures using MATLAB and LaTeX.
+  </p>
+
+  <div class="tech-examples">
+    <!-- MATLAB example -->
+    <div class="tech-box">
+      <img src="images/matlab-svgrepo-com.svg" alt="MATLAB logo" class="tech-logo">
+      <img src="images/specificAbsorptionCoefficients.svg" alt="MATLAB example" class="tech-example">
+      <p class="tech-caption">Scientific figure generated in MATLAB</p>
+    </div>
+  
+    <!-- LaTeX example -->
+    <div class="tech-box">
+      <img src="images/LaTeX_logo.svg" alt="LaTeX logo" class="tech-logo">
+      <img src="images/Tikz.png" alt="LaTeX example" class="tech-example">
+      <p class="tech-caption">Diagram created with LaTeX and TikZ</p>
+    </div>
+  </div>
+</section>
+</section>
+
+<section id="biomedical" class="biomedical-project">
+  <h2 class="section-title">A little bit of context</h2>
+  <div class="biomedical-columns-2">
+    <div class="biomedical-box">
+      <p>
+        Detecting cancer sounds like a weird and difficult task, right? And it certainly is. But what if I told you
+        that it might be possible using gold particles smaller than a speck of dust and laser beams like the ones
+        in Star Wars? It may sound like science fiction, but it’s a real possibility thanks to the combination of
+        nanotechnology and physics.
+      </p>
+      <p>
+        How can something so tiny and invisible to the naked eye help us fight one of the world’s deadliest diseases?
+        To convince you, I’ll walk you through the process step by step— and the best part? No math required!
+      </p>
+      <p>
+        Gold plays a key role in this process. While detecting cancer cells can be challenging, gold is much easier
+        to detect—thanks to its properties as a metal (though we’ll dive into this a bit more later). Cancer cells are
+        extremely small, so the first step is to break down the gold into a size so tiny that it’s measured in
+        billionths of a meter. These minuscule gold particles are what we call gold nanoparticles[1].
+      </p>
+      <img src="images/ShapesNanoGold.png" alt="Gold nanoparticles shapes">
+      <p class="caption">
+        There are countless ways to synthesize gold nanoparticles, and they have many applications beyond
+        cancer detection.[1], [2].
+      </p>
+
+      <p>
+        Once we’ve broken the gold down into tiny nanoparticles, the next step is to get them to stick to the cancer
+        cells somehow. To do this, some brilliant scientists came up with the wonderful idea of creating a coating
+        for the nanoparticles, which contains antibodies that make the coating stick to the cancer cells[3].
+      </p>
+      <img src="images/AdherinCancer.png" alt="Nanoparticles targeting cancer">
+      <p class="caption">Illustration of the previous paragraph</p>
+    </div>
+
+    <div class="biomedical-box">
+      <p>
+        After the nanoparticles have successfully attached to the cancer cells, how do we detect them? This is where
+        lasers and a bit of physics come into play. To understand how we detect gold nanoparticles, imagine directing
+        a laser at a piece of gold and a cancer cell. When the laser strikes both the gold and the cancer cell, they
+        heat up as they absorb some of the laser’s energy. This heating causes vibrations around them, and it’s these
+        vibrations that we can measure using a widely known technique called ultrasound [4]—the same method used to
+        monitor babies during pregnancy.
+      </p>
+      <p>
+        The interesting part is that gold and cancer cells are different materials, meaning they have distinct
+        properties. Specifically, gold, being a metal, is a better conductor of heat than cancer cells. This causes it
+        to absorb more energy from the laser and generate stronger vibrations than the cancer cells, allowing us
+        to observe these intense vibrations through ultrasound.
+      </p>
+      <img src="images/PA.png" alt="Photoacoustic ultrasound detection">
+      <p class="caption">
+        Fig. 3: Since gold nanoparticles generate stronger vibrations than cancer cells, this will appear as a
+        brighter spot in an ultrasound image.
+      </p>
+      <p>
+        With this, I hope I’ve convinced you that we can use gold nanoparticles to detect cancer cells. However, if
+        we analyze this in detail, we’re oversimplifying things into an ideal case where only gold nanoparticles and
+        cancer cells exist. The reality is that in real tissue, other components like skin, blood, water, fats, and
+        many others are also involved[5]. Moreover, there are lasers of many colors—red, blue, green—and some
+        emit light that our eyes can’t see, like ultraviolet and infrared. Could the color of the laser affect anything?
+        The answer is yes[4], and this is where physics and math start to get complicated, but also quite interesting.
+        But why am I telling you all this complicated stuff? Well, this is where my love for mathematics comes into play.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="biomedical-project">
+  <h2 class="section-title">My role in this research area</h2>
+  <div class="biomedical-columns-2">
+    <div class="biomedical-box">
+      <p>
+        The most efficient way to detect gold nanoparticles remains an open research question, as there is no single
+        solution. In fact, different mathematical algorithms can be employed, each with its own set of advantages and
+        disadvantages.
+      </p>
+      <p>
+        Knowing I’m a math enthusiast, on June 7, 2023, my supervisor, Dr. Diego Dumani, an expert in bioengineering,
+        challenged me to use my knowledge to develop a new method/algorithm for detecting these gold nanoparticles.
+      </p>
+      <p>
+        The challenge was a long process filled with setbacks. However, I have now developed a solution that appears
+        to be viable—or at least, that is what the computer simulations suggest.
+      </p>
+      <img src="images/Equation.png" alt="Math equation of algorithm">
+      <p class="caption">
+        This collection of strange symbols is the summary of more than a year and a half of research aimed at optimizing
+        metastasis detection using lasers and gold nanoparticles.
+      </p>
+
+      <p>
+        Now, why create a new algorithm if scientists have already worked on this problem? In the studies I’ve reviewed,
+        the most common methods can be grouped as “solutions to linear regression models with numerical analysis”[4], [6].
+        But since that name is quite complicated, we will refer to them as “typical methods.”
+      </p>
+      <p>
+        My new algorithm aims to make everything faster and cheaper compared to the “typical methods,” even if it
+        sacrifices a small amount of accuracy.
+      </p>
+    </div>
+
+    <div class="biomedical-box">
+      <img src="images/comparison.png" alt="Comparison of detection methods">
+      <p class="caption">
+        The image on the left shows nanoparticle detection using the “typical methods,” while the image on the right
+        shows nanoparticle detection using the method proposed by me.
+      </p>
+
+      <p>
+        As mentioned earlier, my method/algorithm reduces costs because the “typical methods” require lasers of multiple
+        colors (at least four), whereas my method only needs two. Additionally, it saves time since the “typical methods”
+        require a study of the individual’s vein arrangement, which varies from person to person. In contrast, my method
+        eliminates the need for this step.
+      </p>
+      <p>
+        Of course, these time and cost benefits have to come at a price, right? Well, if you take a close look at Figure 5,
+        you can see that the image from my method looks a bit more blurred. But I don’t know, I’d say they look pretty
+        similar, haha.
+      </p>
+      <p>
+        With this, I conclude the best summary I can offer of what I consider my humble contribution to the scientific
+        community, without delving too deeply into the technical details. I hope you enjoyed this journey and learned
+        something new!
+      </p>
+    </div>
+  </div>
+
+  <h3 class="section-title">References</h3>
+  <div class="references">
+    <p>[1] V. Voliani, <i>Gold nanoparticles: an introduction to synthesis, properties and applications</i>. Walter de Gruyter GmbH & Co KG, 2020.</p>
+    <p>[2] P. Ray et al., “Particle specific physical and chemical effects on antibacterial activities...” <i>Colloids and Surfaces A</i>, 2022.</p>
+    <p>[3] X. Qian et al., “In vivo tumor targeting...” <i>Nature biotechnology</i>, vol. 26, no. 1, 2008.</p>
+    <p>[4] B. T. Cox et al., “Estimating chromophore distributions...” <i>Journal of the Optical Society of America A</i>, 2009.</p>
+    <p>[5] F. Cao et al., “Photoacoustic imaging in oxygen detection,” <i>Applied Sciences</i>, 2017.</p>
+    <p>[6] S. Kim et al., “In vivo three-dimensional spectroscopic photoacoustic imaging...” <i>Biomedical optics express</i>, 2011.</p>
+  </div>
+</section>
+
+
+
+
+<script>
+  window.addEventListener('scroll', function () {
+    const logo = document.querySelector('.logo');
+    if (window.scrollY > 100) {
+      logo.classList.add('transparent');
+    } else {
+      logo.classList.remove('transparent');
+    }
+  });
+</script>
+
+
+</body>
+</html>

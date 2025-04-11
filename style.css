@@ -1,0 +1,560 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+/* Apply a global reset to all elements to remove default spacing and borders,
+  and set up consistent box sizing and fonts across the website. */
+  * {
+    margin: 0;              /* Remove default outer spacing */
+    padding: 0;             /* Remove default inner spacing */
+    box-sizing: border-box; /* Include padding and border in element dimensions */
+    text-decoration: none;  /* Remove underline from links */
+    border: none;           /* Remove default borders (e.g., from buttons) */
+    outline: none;          /* Remove focus outline — use with caution for accessibility */
+    font-family: 'Poppins', sans-serif; /* Set the global font */
+  }
+
+/* Set base font-size to 62.5% (10px) to simplify rem calculations: 
+  1rem = 10px instead of 16px */
+
+html{
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;               /* Makes the body take up the full width of the browser window */
+    height: 100vh;             /* Sets the height to 100% of the visible screen (viewport height) */
+    overflow-x: hidden;        /* Hides horizontal scrollbar if content overflows to the sides */
+    background-color: white;   /* Sets the background color of the page */
+    color: black;          /* Sets the default text color*/
+  }
+
+  header {
+    margin-top: 20px;               /* Adds space above the header (for visual separation from the top) */
+    position: fixed;                /* Keeps the header fixed at the top even when scrolling */
+    top: 0;                         /* Positions the header at the very top of the page */
+    left: 0;                        /* Aligns the header to the far left edge of the page */
+    width: 100%;                    /* Makes the header span the full width of the page */
+    padding: 1rem 9%;               /* Adds padding: 1rem top & bottom, 9% left & right for spacing inside */
+    background-color:  transparent;  /* Makes the header background transparent (see-through) */
+    filter: drop-shadow(10px);      /* Adds a subtle shadow behind the header for visual depth */
+    display: flex;                  /* Turns the header into a flex container (for layout control) */ 
+    justify-content: space-between;/* Spaces the logo and nav links to opposite sides */ 
+    align-items: center;           /* Vertically centers the items inside the header */
+    z-index: 100;                  /* Ensures the header stays above other elements (layer priority) */
+  } 
+
+  .logo {
+    font-size: 6rem;          /* Sets the logo font size to 6rem (60px) for strong visual impact */
+    color: rgb(1, 169, 130);           /* Colors the logo text black */
+    font-weight: 800;         /* Makes the logo text bold (weight 800) */
+    cursor: pointer;          /* Changes cursor to a pointer when hovering over the logo */
+    transition: 0.5s ease;    /* Adds a smooth 0.5s transition effect for hover animations */
+  }
+
+.logo:hover{
+    transform: scale(1.1);    /* Slightly enlarges the logo on hover for an interactive effect */
+}
+
+.logo.transparent {
+  opacity: 0;          /* Qué tan transparente: 0 = invisible, 1 = opaco */
+  transition: opacity 0.3s ease;
+}
+
+
+nav a {
+    font-size: 1.8rem;                  /* Sets link text size to 1.8rem (18px) */
+    color: black;                     /* Makes the navigation link text white */
+    margin-left: 4rem;                  /* Adds spacing between links by pushing each one to the right */
+    font-weight: 500;                   /* Applies medium font weight to the links */
+    transition: 0.3s ease;              /* Adds a smooth transition effect for hover and active states */
+    border-bottom: 3px solid transparent; /* Prepares an invisible bottom border for smooth hover effects */
+  }
+  
+
+/* Applies styles to navigation links when hovered (hover state) 
+and to the currently active page link (active state). 
+Enhances user experience by providing visual feedback.*/
+
+nav a:hover,
+nav a.active {
+  color: rgb(1, 169, 130);                        /* Changes link color to black when hovered or active */
+  border-bottom: 3px solid black;     /* Adds a black bottom border as a visual indicator */
+}
+
+
+/* Responsive styles for screens 995px wide or smaller */
+@media (max-width: 995px) {
+  
+    nav {
+      position: absolute;                          /* Positions the nav menu absolutely */
+      display: none;                               /* Hides the menu by default */
+      top: 0;                                       /* Aligns it to the top */
+      right: 0;                                     /* Aligns it to the right */
+      width: 40%;                                   /* Sets the width to 40% of the screen */
+      border-left: 3px solid #b74b4b;               /* Left border in themed color */
+      border-bottom: 3px solid #b74b4b;             /* Bottom border in themed color */
+      border-bottom-left-radius: 2rem;              /* Rounds the bottom-left corner */
+      padding: 1rem;                                /* Adds padding inside the menu (corrected from '1rem solid') */
+      background-color: #161616;                    /* Dark background */
+      border-top: 0.1rem solid rgba(0,0,0,0.1);      /* Light top border for subtle separation */
+    }
+  
+    nav.active {
+      display: block;                               /* Shows the menu when the 'active' class is added */
+    }
+  
+    nav a {
+      display: block;                               /* Stacks nav links vertically */
+      font-size: 2rem;                              /* Increases text size for mobile */
+      margin: 3rem 0;                               /* Adds vertical spacing between links */
+    }
+  
+    nav a:hover,
+    nav a.active {
+      padding: 1rem;                                /* Adds padding to make links easier to click */
+      border-radius: 0.5rem;                        /* Rounds the corners of links */
+      border-bottom: 0.5rem solid #b74b4b;          /* Adds a strong bottom border for emphasis */
+    }
+  }
+
+  /* Contenedor del menú desplegable */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Contenido oculto por defecto */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Estilo para los enlaces dentro del dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  display: block;
+  font-size: 1.6rem;
+  transition: 0.3s;
+  background-color: white;       /* Fondo blanco */
+}
+
+.dropdown-content a:hover {
+  color: #01A982;                /* Letras turquesa */
+  background-color: white;       /* Mantiene el fondo blanco */
+}
+
+/* Mostrar el menú al pasar el mouse */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+  
+
+  section {
+    min-height: 100vh;            /* Ensures each section takes up at least the full height of the screen */
+    padding: 5rem 9% 5rem;        /* Adds vertical padding of 5rem and horizontal padding of 9% to all sections */
+  }
+  
+
+  .home {
+    display: flex;                /* Enables Flexbox layout for the home section */
+    justify-content: center;     /* Horizontally centers the child elements */
+    align-items: center;         /* Vertically centers the child elements */
+    gap: 8rem;                   /* Adds 8rem of spacing between the items */
+    background-color: white;     /* Sets the background color of the home section to white */
+  }
+  
+
+  .home .home-content h1 {
+    font-size: 6rem;       /* Sets the main heading size to 6rem (60px) for strong visual presence */
+    font-weight: 700;      /* Makes the heading text bold with weight 700 */
+    line-height: 1.3;      /* Sets the line spacing to 1.3x the font size for better readability */
+  }
+  
+  span {
+    color: #01A982;        /* Highlights text inside <span> */
+  }
+
+  .home-content h3 {
+    font-size: 4rem;         /* Sets the subtitle text size to 4rem (40px) */
+    margin-bottom: 1rem;     /* Adds spacing below the subtitle */
+    font-weight: 700;        /* Makes the subtitle text bold */
+  }
+  
+  .home-content p {
+    font-size: 1.6rem;       /* Sets paragraph text size to 1.6rem (16px) for readability */
+  }
+  
+  .home-img {
+    border-radius: 50%;      /* Makes the image container circular */
+  }
+  
+  .home-img img {
+    position: relative;               /* Positions the image relative to its normal position (used for effects) */
+    width: 32vw;                      /* Sets the image width to 32% of the viewport width */
+    border-radius: 50%;              /* Makes the image circular */
+    box-shadow: 0 0 25px #01A982;    /* Adds a glowing border-like shadow in the themed color */
+    cursor: pointer;                 /* Changes cursor to a pointer on hover to suggest interactivity */
+    transition: 0.2s linear;         /* Adds a smooth transition effect on hover */
+  }
+
+.home-img img:hover{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.social-icons a {
+    display: inline-flex;                 /* Displays icons in a horizontal row with flexbox */
+    justify-content: center;             /* Horizontally centers the icon inside the circle */
+    align-items: center;                 /* Vertically centers the icon inside the circle */
+    width: 4rem;                         /* Sets the width of each icon container to 4rem (40px) */
+    height: 4rem;                        /* Sets the height to match the width (perfect circle) */
+    background-color: transparent;       /* Makes the background invisible by default */
+    border: 0.2rem solid #01A982;        /* Adds a 2px border in the main theme color */
+    font-size: 2rem;                     /* Sets the icon size to 2rem (20px) */
+    border-radius: 50%;                 /* Makes the container perfectly circular */
+    margin: 3rem 1.5rem 3rem 0;          /* Adds top/bottom margin: 3rem, right: 1.5rem */
+    transition: 0.3s ease;               /* Adds smooth animation for hover effects */
+    color: #01A982;                      /* Sets icon color to the theme color */
+  }
+  
+  .social-icons a:hover {
+    color: black;                        /* Changes icon color to black */
+    transform: scale(1.3) translateY(-5px); /* Enlarges icon and moves it up slightly for a floating effect */
+    background-color: #01A982;           /* Fills the background with the theme color */
+    box-shadow: 0 0 25px #01A982;        /* Adds a glowing effect around the icon */
+  }
+  
+
+  .btn {
+    display: inline-block;               /* Allows the button to have custom size and spacing like a block */
+    padding: 1rem 2.8rem;                /* Adds padding: 1rem top/bottom, 2.8rem left/right */
+    background-color: black;            /* Sets the button's background to black */
+    border-radius: 4rem;                /* Makes the button pill-shaped with large rounded corners */
+    font-size: 1.6rem;                  /* Sets font size to 1.6rem (16px) */
+    color: #01A982;                     /* Sets the button text color to the theme color */
+    letter-spacing: 0.3rem;             /* Adds spacing between letters for style */
+    font-weight: 600;                   /* Applies semi-bold weight to the text */
+    border: 2px solid #01A982;          /* Adds a 2px border in the theme color */
+    transition: 0.3s ease;              /* Adds a smooth transition for hover effects */
+    cursor: pointer;                    /* Changes cursor to a pointer on hover */
+  }
+  
+  .btn:hover {
+    transform: scale3d(1.03);           /* Slightly enlarges the button in 3D (makes it "pop") */
+    background-color: #01A982;          /* Changes background color to the theme color */
+    color: black;                       /* Changes text color to black */
+    box-shadow: 0 0 25px #01A982;       /* Adds a glowing shadow around the button */
+  }
+  
+  .typing-text {
+    font-size: 34px;                    /* Sets the subtitle font size to 34px */
+    font-weight: 600;                   /* Applies semi-bold weight */
+    min-width: 280px;                   /* Ensures the typing area has a minimum width to avoid shifting */
+  }
+  
+  .typing-text span {
+    position: relative;                 /* Needed for absolute positioning of the animation elements inside */
+  }
+  
+
+.typing-text span::before{
+    content: "software Developer";
+    color: #b74b4b;
+    animation: words 20s infinite;
+}
+
+.typing-text span::after{
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 3px solid #b74b4b;
+    }
+}
+
+@keyframes words{
+    0%, 20%{
+        content: "Web Developer";
+    }
+    21%, 40%{
+        content: "Developer";
+    }
+    41%, 60%{
+        content: "Web Designer";
+    }
+    61%, 80%{
+        content: "Youtuber";
+    }
+    81%, 100%{
+        content: "Script Writer";
+    }
+}
+
+@media (max-width: 1000px){
+    .home{
+        gap: 4rem;
+    }
+}
+
+@media(max-width:995px){
+    .home{
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home .home-content h3{
+        font-size: 2.5rem;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
+
+.section-title {
+  text-align: center;                 /* Center the title */
+  font-size: 4rem;                    /* Large font size */
+  color: black;                     /* Themed color (same as your glowing shadow) */
+  margin-bottom: 4rem;               /* Space below the title */
+  font-weight: 700;                  /* Bold */
+  letter-spacing: 0.1rem;            /* Slight spacing between letters */
+}
+
+/* Contenedor general */
+.about-row {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 5rem;
+}
+
+/* Estilo para imagen a la izquierda */
+.about-row.image-left img {
+  order: 0;
+}
+
+.about-row.image-left p {
+  order: 1;
+}
+
+/* Estilo para imagen a la derecha */
+.about-row.image-right img {
+  order: 1;
+}
+
+.about-row.image-right p {
+  order: 0;
+}
+
+/* Imagen */
+.about-row img {
+  width: 32vw;                          /* Misma anchura que la imagen de home */
+  max-width: 300px;                     /* Límite máximo para evitar que se vean demasiado grandes */
+  aspect-ratio: 1 / 1;                  /* Fuerza proporción cuadrada */
+  object-fit: cover;                    /* Recorta la imagen si es necesario, pero mantiene el contenido centrado */
+  border-radius: 1rem;                 /* Bordes suavemente redondeados */
+  box-shadow: 0 0 25px #01A982;        /* Sombra de brillo como en la imagen de inicio */
+  cursor: pointer;                     /* Cursor de clic */
+  transition: 0.2s linear;             /* Suaviza el efecto al pasar el mouse */
+}
+
+/* Texto */
+.about-row p {
+  width: 100%;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.skills-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 4rem;
+}
+
+.about-content h2 {
+  font-size: 3rem;         /* Sets the heading text size to 4rem (40px),
+                              giving it strong visual weight and emphasis. */
+
+  font-weight: 600;        /* Applies bold styling to the heading text,
+                              making it stand out clearly as a section title. */
+
+  line-height: 1.3;        /* Sets the spacing between lines to 1.3 times the font size,
+                              improving readability and preventing the lines from feeling cramped. */
+
+  margin-bottom: 1rem;     /* Adds spacing below the heading to separate it
+                              from the paragraph that follows, enhancing visual clarity. */
+}
+
+.about-content span {
+  color: #01A982; /* mismo verde temático */
+}
+
+.skill-box {
+  flex: 1 1 250px;
+  max-width: 300px;
+  background-color: #f9f9f9;
+  border: 2px solid #01A982;
+  border-radius: 2rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(1, 169, 130, 0.2);
+  transition: 0.3s ease;
+}
+
+.skill-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px #01A982;
+}
+
+.skill-box i {
+  font-size: 4rem;
+  color: #01A982;
+  margin-bottom: 1.5rem;
+}
+
+.skill-box h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.skill-box p {
+  font-size: 1.4rem;
+  color: #666;
+}
+
+/* MatLab y LaTex */
+
+.ieee-description {
+  font-size: 1.8rem;
+  color: #333;
+  text-align: center;
+  max-width: 800px;
+  margin: 4rem auto 4rem; /* ↑ ↑ ↑ ↑ */
+  line-height: 1.6;
+}
+
+.tech-examples {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.tech-box {
+  display: flex;
+  flex-direction: column;         /* Apila verticalmente */
+  align-items: center;            /* Centra horizontalmente */
+  border: 2px solid #01A982;
+  border-radius: 2rem;
+  padding: 2rem;
+  max-width: 500px;
+  box-shadow: 0 0 15px rgba(1, 169, 130, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.tech-logo {
+  width: 80px;                    /* Más grande que antes */
+  height: auto;
+  margin-bottom: 2rem;
+}
+
+.tech-example {
+  width: 100%;                    /* Que ocupe todo el ancho disponible */
+  max-width: 400px;               /* Con un límite razonable */
+  height: auto;
+  margin: 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+}
+
+.arrow {
+  display: none; /* Oculta la flecha por completo */
+}
+
+.tech-caption {
+  font-size: 1.4rem;
+  color: #555;
+  text-align: center;
+}
+
+/* MatLab y LaTex */
+
+.biomedical-columns-2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.biomedical-box {
+  flex: 1 1 45%;
+  background-color: white;
+  border: 2px solid #01A982;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 10px rgba(1, 169, 130, 0.1);
+  font-size: 1.8rem; /* Tamaño de letra aumentado */
+  line-height: 1.6;
+  color: #333;
+  transition: 0.3s ease; /* Transición suave para hover */
+}
+
+.biomedical-box:hover {
+  transform: translateY(-10px); /* Sube ligeramente la caja */
+  box-shadow: 0 0 25px #01A982; /* Brillo turquesa */
+  cursor: pointer;
+}
+
+
+.biomedical-box img {
+  width: 100%;
+  border: 3px solid #01A982;
+  border-radius: 1rem;
+  margin-top: 1.5rem;
+}
+
+.caption {
+  font-size: 1.4rem;
+  color: #555;
+  margin-top: 0.8rem;
+  text-align: center;
+}
+
+.references {
+  font-size: 1.8rem;         /* Aumenta el tamaño de fuente */
+  line-height: 1.6;
+  color: #333;
+  padding-left: 1rem;
+  margin-top: 2rem;
+}
+
+.references p {
+  margin-bottom: 1.2rem;
+  text-align: justify;
+}
+
+
