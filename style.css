@@ -28,7 +28,7 @@ body {
   }
 
   header {
-    margin-top: 20px;               /* Adds space above the header (for visual separation from the top) */
+    margin-top: 0px;               /* Adds space above the header (for visual separation from the top) */
     position: fixed;                /* Keeps the header fixed at the top even when scrolling */
     top: 0;                         /* Positions the header at the very top of the page */
     left: 0;                        /* Aligns the header to the far left edge of the page */
@@ -43,9 +43,9 @@ body {
   } 
 
   .logo {
-    font-size: 6rem;          /* Sets the logo font size to 6rem (60px) for strong visual impact */
+    font-size: 5rem;          /* Sets the logo font size to 6rem (50px) for strong visual impact */
     color: rgb(1, 169, 130);           /* Colors the logo text black */
-    font-weight: 800;         /* Makes the logo text bold (weight 800) */
+    font-weight: 700;         /* Makes the logo text bold (weight 700) */
     cursor: pointer;          /* Changes cursor to a pointer when hovering over the logo */
     transition: 0.5s ease;    /* Adds a smooth 0.5s transition effect for hover animations */
   }
@@ -376,6 +376,11 @@ nav a.active {
   box-shadow: 0 0 25px #01A982;        /* Sombra de brillo como en la imagen de inicio */
   cursor: pointer;                     /* Cursor de clic */
   transition: 0.2s linear;             /* Suaviza el efecto al pasar el mouse */
+}
+
+.about-row img:hover {
+  transform: translateY(-8px); /* Hace que suba un poco */
+  box-shadow: 0 0 30px #01A982; /* Agrega un brillo turquesa */
 }
 
 /* Texto */
