@@ -573,6 +573,20 @@ nav a.active {
   text-align: justify;
 }
 
+.warning-btn {
+  background-color: #b74b4b;
+  color: white;
+  border: 2px solid #b74b4b;
+  margin-top: 2rem;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+
+.warning-btn:hover {
+  background-color: white;
+  color: #b74b4b;
+  box-shadow: 0 0 25px #b74b4b;
+}
 
 
 /* Robot */
